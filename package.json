@@ -1,0 +1,38 @@
+{
+  "name": "nestjs-ssr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch \"server/**\" --watch \"client/**\" --ext \"ts,tsx,json\" --ignore \"src/**/*.spec.ts\" --exec yarn run start",
+    "start": "concurrently \"yarn run client\" \"yarn run server\"",
+    "client": "webpack",
+    "server": "TS_NODE_PROJECT='./tsconfig.server.json' ts-node server/main.ts"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^5.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.4.0",
+    "nodemon": "^2.0.7",
+    "source-map-loader": "^2.0.1",
+    "typescript": "^4.2.3",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@nestjs/common": "^7.6.15",
+    "@nestjs/core": "^7.6.15",
+    "@nestjs/platform-express": "^7.6.15",
+    "@nestjs/serve-static": "^2.1.4",
+    "concurrently": "^6.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.6",
+    "ts-node": "^9.1.1"
+  }
+}
